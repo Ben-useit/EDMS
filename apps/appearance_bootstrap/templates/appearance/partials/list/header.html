@@ -5,18 +5,50 @@
 {% load appearance_tags %}
 {% load common_tags %}
 {% load navigation_tags %}
+{% load views_tags %}
 
-<h4>
-    {% if page_obj %}
-        {% if page_obj.paginator.num_pages != 1 %}
-            {% blocktrans with page_obj.start_index|intcomma as start and page_obj.end_index|intcomma as end and page_obj.paginator.object_list|appearance_object_list_count|intcomma as total and page_obj.number|intcomma as page_number and page_obj.paginator.num_pages|intcomma as total_pages %}Total ({{ start }} - {{ end }} out of {{ total }}) (Page {{ page_number }} of {{ total_pages }}){% endblocktrans %}
+{% views_calculate_title as result %}
+
+
+<div class="header-title-totals">
+{% if not non_html_title %}
+    <div style="display: flex;">
+        <button id="main-menu-button-open">
+            <span class="sr-only">{% trans 'Open main menu' %}</span>
+            <i aria-hidden="true" data-hidden="true" class="fa fa-bars"></i>
+        </button>
+{% endif %}
+    <div class="title">
+         {% if not non_html_title and result.title %}
+        
+            <span id="content-title" title='{{ result.title_full }}'>
+{% endif %}
+
+{% if view_icon %}{{ view_icon.render }} &nbsp;{% endif %}
+<span id="appearance-title-text">{{ result.title }}</span>
+
+{% if not non_html_title and result.title %}
+            </span>
+            {% if subtitle %}
+                <p>
+                    <small>{{ subtitle }}</small>
+                </p>
+            {% endif %}
+{% endif %} ::
+    </div>
+    <div class="totals">
+            {% if page_obj %}
+            {% if page_obj.paginator.num_pages != 1 %}
+                {% blocktrans with page_obj.start_index|intcomma as start and page_obj.end_index|intcomma as end and page_obj.paginator.object_list|appearance_object_list_count|intcomma as total and page_obj.number|intcomma as page_number and page_obj.paginator.num_pages|intcomma as total_pages %}Total ({{ start }} - {{ end }} out of {{ total }}) (Page {{ page_number }} of {{ total_pages }}){% endblocktrans %}
+            {% else %}
+                {% blocktrans with page_obj.paginator.object_list|appearance_object_list_count|intcomma as total %}Total1: {{ total }}{% endblocktrans %}
+            {% endif %}
         {% else %}
-            {% blocktrans with page_obj.paginator.object_list|appearance_object_list_count|intcomma as total %}Total: {{ total }}{% endblocktrans %}
+            {% blocktrans with object_list|appearance_object_list_count|intcomma as total %}Total2: {{ total }}{% endblocktrans %}
         {% endif %}
-    {% else %}
-        {% blocktrans with object_list|appearance_object_list_count|intcomma as total %}Total: {{ total }}{% endblocktrans %}
-    {% endif %}
-</h4>
+    </div>
+</div>
+
 <hr>
 
 {% if not hide_multi_item_actions %}

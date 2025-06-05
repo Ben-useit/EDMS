@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'IM Fell English SC';
+  font-style: normal;
+  font-weight: normal;
+  src: local('IM FELL English SC'), local('IM_FELL_English_SC'),
+    url('../fonts/IM_Fell_English_SC.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/IM_Fell_English_SC.woff') format('woff'),
+    url('../fonts/IM_Fell_English_SC.svg#IMFellEnglishSC') format('svg'),
+    url('../fonts/IM_Fell_English_SC.ttf') format('truetype');
+}
+/* Colors
+  Terracotta red, light beige, and muted teal 
+  #B85042, #E7E8D1, #A7BEAE
+
+*/
+
+:root {
+  --default: #2c3e50;
+  --font-red: #990011;
+  --off-white: #fcf6f5;
+  --background-dark: #b85042;
+  --background-middle: #a7beae;
+  --background-light: #e7e8d1;
+}
+
+.well {
+  background-color: #fff;
+}
+
+.dropdown-menu {
+  background: var(--background-light);
+}
+.dropdown-menu > li :hover {
+  background: var(--background-middle) !important;
+  color: white !important;
+}
+.dropdown-menu .divider {
+  background: var(--background-dark);
+}
+
+.navbar-default .navbar-nav > .open > a {
+  background: var(--background-dark) !important;
+  color: var(--off-white) !important;
+  border: 1px solid var(--off-white);
+}
+
+.navigation-btn-lg {
+  text-shadow: none;
+}
+.navbar-default {
+  background-color: var(--background-dark);
+}
+.navbar-fixed-top {
+  box-shadow: none;
+}
+
+#menu-main {
+  background-color: var(--background-light);
+}
+
+#accordion-sidebar .panel-heading {
+  background-color: var(--background-light);
+  color: var(--font-red);
+}
+
+#accordion-sidebar .panel-heading:hover {
+  background-color: var(--background-light);
+}
+
+.btn-primary {
+  background-color: var(--background-light);
+  color: var(--font-red);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--background-middle);
+  color: var(--font-red);
+  border: none;
+}
+
+#main-menu-footer {
+  background: var(--background-light);
+}
+
+#accordion-sidebar .panel-body {
+  background-color: var(--background-light);
+  color: var(--font-red);
+}
+
+#accordion-sidebar .panel-body a {
+  color: var(--font-red);
+}
+
+#accordion-sidebar > .panel > div > .panel-body > ul > li.active {
+  background: var(--background-dark);
+}
+
+#accordion-sidebar > .panel > div > .panel-body > ul > li.active > a {
+  color: white;
+}
+
+#accordion-sidebar > .panel > div > .panel-body > ul > li:hover {
+  background-color: var(--background-middle);
+}
+
+.non-ajax {
+  background-color: var(--background-light) !important;
+}
+
+#accordion-sidebar > .panel > div > div > ul > li > a,
+#accordion-sidebar > .panel > div > h4 > a {
+  color: var(--font-red);
+}
+
+#accordion-sidebar > .panel > div > div > ul > li > a:hover {
+  color: white;
+}
+
+.btn-danger {
+  color: #ffffff;
+  background-color: var(--background-dark);
+  border-color: var(--background-dark);
+}
+
+.list-group-item.active {
+  background-color: var(--background-dark);
+}
+
+.header-title-totals {
+  font-size: 1.4em;
+  padding-top: 10px;
+}
+
+/* .header-title-totals * .title,
+.header-title-totals * .totals {
+  display: inline;
+  padding-right: 20px;
+} */

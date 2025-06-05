@@ -1,0 +1,8 @@
+{% load navigation_tags %}
+<div class="{{ column_class|default:'col-xs-12 col-sm-4 col-md-3 col-lg-2' }}">
+    <div class="panel panel-primary  document-details" style="border:0px;">
+        {% include 'appearance/partials/list/panel/document/heading_list.html' %}
+        {% include 'appearance/partials/list/panel/document/body_list.html' %}
+        {% include 'appearance/partials/list/panel/document/footer_list.html' %}
+    </div>
+</div>

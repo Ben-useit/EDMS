@@ -55,3 +55,21 @@ def common_object_property(value, arg):
 @register.simple_tag
 def common_project_information(attribute_name):
     return getattr(mayan, attribute_name)
+
+@register.filter
+def common_is_document_view(value):
+    str_value = str(value)
+    str_value = str_value.strip()
+    if str_value == "":
+        return False
+    str_value = str_value[:8]
+    document_views = """
+    Document,duplicatesource document, trashed document, 
+    Recently accessed document,recently created document,recently created document,
+    favorite document proxy, Search query"""
+   
+    return str_value in document_views
+
+@register.filter
+def common_in_list(value,arg):
+    return str(value) in arg
