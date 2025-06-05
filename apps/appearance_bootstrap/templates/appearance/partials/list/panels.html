@@ -23,11 +23,13 @@
             {% navigation_get_source_columns source=object_list exclude_identifier=True as source_columns_non_identifier %}
             {% common_get_object_verbose_name obj=object_list.0 as object_verbose_name %}
             <div class="well center-block">
-                <div class="row row-items">
+                <div class="row row-items" style="display:flex;flex-wrap: wrap;">
                     {% if object_verbose_name|common_is_document_view %}
+                    
                         {% for object in object_list %}
                             {% include 'appearance/partials/list/panel/document/single.html' %}
                         {% endfor %}
+                    
                     {% else %}
                         {% for object in object_list %}
                             {% include 'appearance/partials/list/panel/single.html' %}

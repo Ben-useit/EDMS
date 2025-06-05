@@ -15,14 +15,22 @@
     {% appearance_app_templates template_name='login_content' %}
 
     <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+        <img style="position: relative;">
+            <img style="width: 100%" src="{% static 'appearance/images/annie-spratt.jpg' %}"/>
+            <div style="position: absolute; top:40px; left:0px;">
+        <div  class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
 
-            <div class="panel panel-primary">
+            <div class="panel panel-primary" style="margin-top: 130px;opacity: 0.8;">
                 <div class="panel-body">
 
                     <div id="authentication-login-image-wrapper">
-                        <img class="center-block img-responsive" id="authentication-login-image-top" src="{% static 'authentication/images/useit-logo.svg' %}"/>
+                        <img class="center-block img-responsive" id="authentication-login-image-top" src="{% static 'authentication/images/logo_short.svg' %}"/>
                     </div>
+                    <div style="font-size: larger;padding-left:30px;padding-bottom: 30px;">
+                        <span style="color:#97a50a;font-weight: bolder;font-size: larger;">E</span>lectronic 
+                        <span style="color:#97a50a;font-weight: bolder;font-size: larger;">D</span>ocument 
+                        <span style="color:#97a50a;font-weight: bolder;font-size: larger;">M</span>anagement 
+                        <span style="color:#97a50a;font-weight: bolder;font-size: larger;">S</span>ystem</div>
 
                     <div class="content login">
                         {% if form.is_multipart %}
@@ -109,6 +117,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div></div>
+    </div>
     </div>
 {% endblock %}

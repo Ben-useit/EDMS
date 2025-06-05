@@ -11,6 +11,7 @@
 /* Colors
   Terracotta red, light beige, and muted teal 
   #B85042, #E7E8D1, #A7BEAE
+  --background-light: #e7e8d1;
 
 */
 
@@ -20,7 +21,7 @@
   --off-white: #fcf6f5;
   --background-dark: #b85042;
   --background-middle: #a7beae;
-  --background-light: #e7e8d1;
+  --background-light: #fcf6f5;
 }
 
 .well {
@@ -31,7 +32,7 @@
   background: var(--background-light);
 }
 .dropdown-menu > li :hover {
-  background: var(--background-middle) !important;
+  background: var(--background-dark) !important;
   color: white !important;
 }
 .dropdown-menu .divider {
@@ -73,7 +74,7 @@
   border: none;
 }
 .btn-primary:hover {
-  background-color: var(--background-middle);
+  background-color: var(--background-dark);
   color: var(--font-red);
   border: none;
 }
@@ -100,7 +101,7 @@
 }
 
 #accordion-sidebar > .panel > div > .panel-body > ul > li:hover {
-  background-color: var(--background-middle);
+  background-color: var(--background-dark);
 }
 
 .non-ajax {
@@ -127,7 +128,6 @@
 }
 
 .header-title-totals {
-  font-size: 1.4em;
   padding-top: 10px;
 }
 

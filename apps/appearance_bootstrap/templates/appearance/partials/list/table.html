@@ -21,13 +21,13 @@
         {% navigation_get_source_columns source=object_list only_identifier=True as source_columns_identifier %}
         {% navigation_get_source_columns source=object_list exclude_identifier=True as source_columns_non_identifier %}
         {% common_get_object_verbose_name obj=object_list.0 as object_verbose_name %}
-        {% if debug %} Verbose name: {{object_verbose_name}} {% endif %}
+        {% if debug %} {{object_verbose_name}} {% endif %}
         <div class="well center-block">
             <div class="table-responsive">
                 <table class="table table-condensed table-striped appearance-table-condensed">
                     <thead>
                         {% if not hide_header %}
-                            <tr>
+                            <tr style=" font-size: small;">
                            {% if object_verbose_name|common_is_document_view %}
                             
                                 {% include 'appearance/partials/list/table/head/document/row_cell_checkbox.html' %}
@@ -55,7 +55,7 @@
                     <tbody>
                         {% if object_verbose_name|common_is_document_view %}
                         {% for object in object_list %}
-                            <tr>
+                            <tr style=" font-size: small;">
                                 {% include 'appearance/partials/list/table/body/document/row_cell_checkbox.html' %}
                                 {% include 'appearance/partials/list/table/body/document/row_cell_thumbnail.html' %}
                                 {% include 'appearance/partials/list/table/body/document/row_cell_identifier.html' %}

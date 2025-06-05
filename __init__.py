@@ -1,4 +1,4 @@
-__title__ = 'Mayan EDMS'
+__title__ = 'UseIT EDMS'
 __version__ = '4.9.1'
 __build__ = 0x040901
 __build_string__ = 'v4.9.1_Tue Jan 21 20:11:31 2025 -0400'
@@ -7,6 +7,6 @@ __author__ = 'Roberto Rosario'
 __author_email__ = 'roberto.rosario@mayan-edms.com'
 __description__ = 'Free Open Source Electronic Document Management System'
 __license__ = 'GPL 2.0'
-__copyright_short__ = '2024 Roberto Rosario'
+__copyright_short__ = '2025 Roberto Rosario, UseIT'
 __copyright__ = '{} {}'.format('Copyright', __copyright_short__)
 __website__ = 'https://www.mayan-edms.com'

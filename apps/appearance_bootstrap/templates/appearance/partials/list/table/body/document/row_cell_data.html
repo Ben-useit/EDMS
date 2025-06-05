@@ -4,10 +4,15 @@
 {% if not hide_columns %}
     {% for column in source_columns_non_identifier %}
         {% if column.label|common_in_list:"Pages,Created" %}
-        <td style="vertical-align: middle; text-align: right; {%if column.label == "Created" %} width:120px;padding-left:10px {% else %} width:60px; {% endif %}">
+        <td style="vertical-align: middle; text-align: right; {%if column.label == "Created" %} width:100px;padding-left:10px {% else %} width:60px; {% endif %}">
             <div class="{{ table_cell_container_classes }} {{ column.html_extra_classes }}">
                 
-                {% navigation_source_column_resolve column=column as column_value %}{{ column_value }}
+                {% navigation_source_column_resolve column=column as column_value %}
+                {% if column.label == "Created" %}
+                {{ column_value|date:"d M y" }}
+                {% else %}
+                {{ column_value }}
+                {%endif%}
                 
                 {# Use explicit 'as column_value ' to force date rendering #}
             </div>
